@@ -17,10 +17,12 @@ El proyecto está organizado con la siguiente estructura de carpetas y archivos:
 ├── data/
 │   ├── raw/
 │   │   ├── dataset.py        # Script para descargar el dataset original desde HuggingFace
-│   │   └── spotify_raw.csv   # Dataset original en bruto
+│   │   └── spotify_raw.csv   # Dataset original crudo
 │   └── processed/
 │       └── spotify_cleaned.csv  # Dataset limpio y estandarizado tras la Práctica 1
 ├── Practica 1/               # Carpeta correspondiente a la Práctica 1
-├── .gitignore                # Configuración para omitir archivos pesados o del entorno
+├── Practica 2/               # Carpeta correspondiente a la Práctica 2
+│   ├── outputs/              # Contiene graficas, el diagrama ER y un resumen .csv de la Practica 2
+├── .gitignore
 └── README.md
 ```
