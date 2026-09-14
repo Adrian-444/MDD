@@ -23,6 +23,10 @@ El proyecto está organizado con la siguiente estructura de carpetas y archivos:
 ├── Practica 1/               # Carpeta correspondiente a la Práctica 1
 ├── Practica 2/               # Carpeta correspondiente a la Práctica 2
 │   ├── outputs/              # Contiene graficas, el diagrama ER y un resumen .csv de la Practica 2
+├── Practica 3/               # Carpeta correspondiente a la Práctica 3
+│   ├── outputs/              # Contiene las graficas de la Practica 3
+├── Practica 4/               # Carpeta correspondiente a la Práctica 4
+│   ├── outputs/              # Contiene las graficas de las pruebas estadisticas
 ├── .gitignore
 └── README.md
 ```
