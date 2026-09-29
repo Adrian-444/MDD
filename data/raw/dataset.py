@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-# Dataset URL
+# url del dataset
 url = "https://huggingface.co/datasets/khepplewhite/SpotifyData/resolve/main/final.csv"
 
 print("Descargando dataset...")

@@ -1,7 +1,5 @@
-"""
-Práctica 1: Limpieza de Datos
-Dataset: Spotify Data
-"""
+# practica 1: limpieza de datos
+# dataset: spotify data
 
 import pandas as pd
 import numpy as np
@@ -26,20 +24,20 @@ def diagnostico_inicial(df):
 def limpiar_datos(df):
     df_clean = df.copy()
     
-    #  Eliminación de duplicados exactos
+    # eliminacion de duplicados exactos
     filas_antes = len(df_clean)
     df_clean = df_clean.drop_duplicates()
     print(f"-> Se eliminaron {filas_antes - len(df_clean)} filas duplicadas.")
     
-    # Manejo de Valores Nulos
-    # Si existen columnas categóricas nulas se llenan con 'Unknown'
+    # manejo de valores nulos
+    # si existen columnas categoricas nulas se llenan con 'unknown'
     cols_texto = df_clean.select_dtypes(include=['object', 'string', 'str']).columns
     for col in cols_texto:
         if df_clean[col].isnull().sum() > 0:
             df_clean[col] = df_clean[col].fillna("Unknown")
             print(f"-> Imputados valores nulos en columna categórica: '{col}' con 'Unknown'.")
             
-    # Si existen columnas numéricas nulas se llenan con la mediana
+    # si existen columnas numericas nulas se llenan con la mediana
     cols_num = df_clean.select_dtypes(include=['number']).columns
     for col in cols_num:
         if df_clean[col].isnull().sum() > 0:
@@ -47,7 +45,7 @@ def limpiar_datos(df):
             df_clean[col] = df_clean[col].fillna(mediana)
             print(f"-> Imputados valores nulos en columna numérica: '{col}' con la mediana ({mediana}).")
             
-    # Formatear nombres de columnas
+    # formatear nombres de columnas
     df_clean.columns = (
         df_clean.columns
         .str.strip()
@@ -57,8 +55,8 @@ def limpiar_datos(df):
     )
     print("-> Nombres de columnas estandarizados (snake_case).")
     
-    # Conversión de tipos de datos (si aplica)
-    # Por ejemplo, asegurar que la duración o tempo sean flotantes/enteros positivos
+    # conversion de tipos de datos (si aplica)
+    # por ejemplo, asegurar que la duracion o tempo sean flotantes/enteros positivos
     if 'duration' in df_clean.columns:
         df_clean = df_clean[df_clean['duration'] > 0]
         
